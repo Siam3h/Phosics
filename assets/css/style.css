@@ -1,0 +1,800 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 10px;
+    font-family:serif;
+}
+
+.top-nav h1 {
+    color: red;
+}
+
+.top-nav h1 span {
+    color: #00BAF0;
+}
+
+.top-nav img {
+    display: none;
+}
+
+
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    height: 50px;
+    padding: 1em;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+}
+
+.menu>li {
+    margin: 0 1rem;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 50px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #252525;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+.services .contact-form-arch {
+    display: none;
+    animation: contact-form-load 800ms ease-in;
+}
+
+.services .contact-form-plan {
+    display: none;
+    animation: contact-form-load 800ms ease-in;
+}
+
+.services .contact-form-civil {
+    display: none;
+    animation: contact-form-load 800ms ease-in;
+}
+
+@keyframes contact-form-load {
+    0% {
+        transform: translateY(-100%)
+    }
+
+    100% {
+        transform: translate(0)
+    }
+}
+
+form {
+    width: 100%;
+    height: auto;
+}
+
+form p {
+    margin-bottom: 15px;
+    width: 100%;
+    line-height: 2rem;
+}
+
+form h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+form #text-area {
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.services .buttn {
+    background: #00BAF0;
+    color: #26272b;
+    border: none;
+    width: 80px;
+    height: 50px;
+    border-radius: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    font-weight: bold;
+}
+
+.home-body {
+    display: grid;
+    grid: 500px/50% 40%;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.home-body .home-para h1 span {
+    color: #00BAF0;
+}
+
+.home-body .home-para h1 {
+    color: red;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.home-body .home-para .intro {
+    display: none;
+}
+
+.home-body .images-home img {
+    width: 100%;
+    height: 500px;
+    animation: image-load 900ms ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 350ms;
+    transform: scale(0);
+}
+
+@keyframes image-load {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.home-body .home-para p {
+    margin-top: 10%;
+    line-height: 2rem;
+    padding: 5px;
+}
+
+.home-body .home-para .button .butn {
+    background: #00BAF0;
+    color: #26272b;
+    border: none;
+    width: 80px;
+    height: 50px;
+    border-radius: 80px;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    font-weight: bold;
+}
+
+.About-us {
+    color: #252525;
+    height: 350px;
+    margin: 15px 0 15px 0;
+    padding: 20px;
+    display: grid;
+    grid-template: auto/ 30% 30% 30%;
+    justify-content: space-evenly;
+}
+
+.About-head {
+    display: grid;
+    grid-template: 20px/200px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.About-us .Vision {
+    width: 100%;
+    padding-top: 15px;
+    background: #00BAF0;
+    animation: vision-load 900ms ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 350ms;
+    transform: scale(0);
+}
+
+@keyframes vision-load {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.About-us .Vision h2 {
+    text-decoration: underline;
+    text-align: center;
+    justify-content: center;
+}
+
+.About-us .Vision p {
+    padding: 15px;
+    line-height: 2rem;
+}
+
+.About-us .Vision img {
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+.About-us .Mission {
+    width: 100%;
+    padding-top: 15px;
+    background: #00BAF0;
+    animation: mission-load 900ms ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 350ms;
+    transform: scale(0);
+}
+
+@keyframes mission-load {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.About-us .Mission h2 {
+    text-decoration: underline;
+    text-align: center;
+    justify-content: center;
+}
+
+.About-us .Mission p {
+    padding: 15px;
+    line-height: 2rem;
+}
+
+.About-us .Mission img {
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+.About-us .Goals {
+    width: 100%;
+    padding-top: 15px;
+    background: #00BAF0;
+    animation: goal-load 900ms ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 350ms;
+    transform: scale(0);
+}
+
+@keyframes goal-load {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.About-us .Goals h2 {
+    text-decoration: underline;
+    text-align: center;
+    justify-content: center;
+}
+
+.About-us .Goals p {
+    padding: 15px;
+    line-height: 2rem;
+}
+
+.About-us .Goals img {
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.services-head {
+    display: grid;
+    grid-template: 20px/200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-head h1 {
+    text-decoration: #00BAF0;
+}
+
+.services {
+    color: #252525;
+    height: 350px;
+    margin-bottom: 250px;
+    padding: 20px;
+    display: grid;
+    grid-template: auto/ 30% 30% 30%;
+    justify-content: space-evenly;
+    animation: services-load 900ms ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 600ms;
+    transform: scale(0);
+
+}
+
+@keyframes services-load {
+    0% {
+        transform: translateY(-100%)
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+
+
+.services .Architecture {
+    width: 100%;
+    padding-top: 15px;
+}
+
+.services .Architecture h2 {
+    margin: 0 0 10px 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.services .Architecture p {
+    padding: 15px;
+    line-height: 2rem;
+}
+
+.services .Architecture img {
+    height: 40%;
+    width: 100%;
+}
+
+.services .Architecture .buttons .buttn {
+    background: #00BAF0;
+    color: #26272b;
+    border: none;
+    width: 80px;
+    height: 50px;
+    border-radius: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    font-weight: bold;
+}
+
+.services .UrbanPlanning-Survey {
+    width: 100%;
+    padding-top: 15px;
+}
+
+.services .UrbanPlanning-Survey h2 {
+    margin: 0 0 10px 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.services .UrbanPlanning-Survey p {
+    padding: 15px;
+    line-height: 2rem;
+}
+
+.services .UrbanPlanning-Survey img {
+    height: 40%;
+    width: 100%;
+}
+
+.services .UrbanPlanning-Survey .buttons .buttn {
+    background: #00BAF0;
+    color: #26272b;
+    border: none;
+    width: 80px;
+    height: 50px;
+    border-radius: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    font-weight: bold;
+}
+
+.services .Civil-Engineering {
+    padding-top: 15px;
+    width: 100%;
+}
+
+.services .Civil-Engineering img {
+    height: 40%;
+    width: 100%;
+}
+
+.services .Civil-Engineering h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.services .Civil-Engineering p {
+    padding: 15px;
+    line-height: 2rem;
+}
+
+.services .Civil-Engineering .buttons .buttn {
+    background: #00BAF0;
+    color: #26272b;
+    border: none;
+    width: 80px;
+    height: 50px;
+    border-radius: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    font-weight: bold;
+}
+
+
+.site-footer .container .row {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template: auto/55% 15% 15%;
+    margin: 15px;
+}
+
+.site-footer {
+    background-color: #26272b;
+    padding: 20px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #737373;
+    width: 100%;
+}
+
+.site-footer hr {
+    border-top-color: #bbb;
+    opacity: 0.5;
+}
+
+.site-footer hr.small {
+    margin: 20px 0;
+}
+
+.site-footer h6 {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+.site-footer a {
+    color: #737373;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+
+.footer-links {
+    padding-left: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.copyright-text {
+    margin: 0;
+}
+
+.copyright-bx {
+    margin-top: 5px;
+    padding-right:10px;
+    padding-left:10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-copyright a {
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .menu-button-container {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 30px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .top-nav img {
+        display: inline;
+    }
+
+    .top-nav h1 {
+        display: none;
+    }
+
+    #menu-toggle~.menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #menu-toggle:checked~.menu li {
+        border: 2px solid white;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .menu>li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: #252525`;
+        font-weight: bold;
+        width: 50%;
+        background-color: #00BAF0;
+    }
+
+    .menu>li:not(:last-child) {
+        border-bottom: 1px solid #444;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .top-nav img {
+        display: inline;
+    }
+
+    .top-nav h1 {
+        display: none;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .services .contact-form-arch {
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+
+    .services .contact-form-plan {
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+
+    .services .contact-form-civil {
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+
+
+    .header .logo {
+        display: none;
+    }
+
+    .home-body .images-home img {
+        display: none;
+    }
+
+    .home-body .home-para .intro {
+        display: block;
+    }
+
+    .home-body .home-para .intro p {
+        font-size: 40px;
+        line-height: 2rem;
+        font-weight: bolder;
+    }
+
+    .home-body .home-para .intro p span {
+        color: red;
+    }
+
+    .home-body .home-para .intro .red {
+        color: #00BAF0;
+    }
+
+    .home-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-body .home-para h1 {
+        display: none;
+        position: absolute;
+        color: #26272b;
+        text-decoration: underline #3366cc;
+        font-weight: bolder;
+        top: 540px;
+        border-bottom: #00BAF0;
+        left: 100px;
+    }
+
+    .About-us {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
+
+    .About-head {
+        text-decoration: underline;
+    }
+
+    .About-us .Vision {
+        margin: 15px 0 15px 0;
+    }
+
+    .About-us .Mission {
+        margin: 15px 0 15px 0;
+    }
+
+    .About-us .Goals {
+        margin: 15px 0 5px 0;
+    }
+
+    .services {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+    }
+
+    .services-head {
+        text-decoration: underline;
+    }
+
+    .services .Architecture {
+        margin: 15px 0 15px 0;
+    }
+
+    .services .UrbanPlanning-Survey {
+        margin: 15px 0 15px 0;
+    }
+
+    .services .Civil-Engineering {
+        margin-top: 15px;
+    }
+
+    .site-footer {
+        margin-top: 5px;
+    }
+
+    .site-footer .container .row {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        width: auto;
+    }
+}
